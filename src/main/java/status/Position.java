@@ -63,5 +63,32 @@ public class Position{
         return String.format("(%d,%d)", row, col);
     }
 
+    /**
+     *
+     * @param o
+     * @return
+     */
+    @Override
+    public boolean checkConflict(Object o){
+        if (o != this )
+            return false;
+        if (o == this)
+            return true;
+        var temp=(Position) o;
+        return this.row== temp.row && this.col==temp.col;
+    }
+
+    /**
+     *
+     * @param o
+     * @return
+     */
+    @Override
+    public int compareTo(Position o){
+        if (this.col != o.col)
+            return this.col-o.col;
+        return this.row-o.row;
+    }
+
 }
 
