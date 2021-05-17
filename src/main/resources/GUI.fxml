@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -21,10 +28,9 @@
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints />
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -33,189 +39,305 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints />
+      <RowConstraints />
   </rowConstraints>
    <children>
-      <GridPane prefWidth="601.0" GridPane.columnIndex="1" GridPane.columnSpan="8" GridPane.rowIndex="2" GridPane.rowSpan="8">
+      <GridPane fx:id="chessBoardGrid" GridPane.columnIndex="2" GridPane.columnSpan="8" GridPane.rowIndex="1" GridPane.rowSpan="8">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <Label text="A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <Label text="A" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="B" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <Label text="B" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="C" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <Label text="C" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="D" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <Label text="D" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="E" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <Label text="E" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="F" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <Label text="F" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="G" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <Label text="G" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="H" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <Label text="H" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+      <Label text="8" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+      <Label text="7" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+      <Label text="6" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="4" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+      <Label text="5" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="5" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+      <Label text="4" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="6" GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+      <Label text="3" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="7" GridPane.halignment="RIGHT" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+      <Label text="2" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="8" GridPane.halignment="RIGHT" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+      <Label text="1" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8" GridPane.valignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="TOP">
+      <Label text="A" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="TOP">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="B" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="TOP">
+      <Label text="B" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="TOP">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="C" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="TOP">
+      <Label text="C" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="TOP">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="D" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="TOP">
+      <Label text="D" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="TOP">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="E" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="TOP">
+      <Label text="E" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="TOP">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="F" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="TOP">
+      <Label text="F" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="TOP">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="G" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="TOP">
+      <Label text="G" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="TOP">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="H" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="TOP">
+      <Label text="H" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="TOP">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="1" GridPane.columnIndex="9" GridPane.rowIndex="2">
+      <Label text="8" GridPane.columnIndex="10" GridPane.rowIndex="1">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="2" GridPane.columnIndex="9" GridPane.rowIndex="3">
+      <Label text="7" GridPane.columnIndex="10" GridPane.rowIndex="2">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="3" GridPane.columnIndex="9" GridPane.rowIndex="4">
+      <Label text="6" GridPane.columnIndex="10" GridPane.rowIndex="3">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="4" GridPane.columnIndex="9" GridPane.rowIndex="5">
+      <Label text="5" GridPane.columnIndex="10" GridPane.rowIndex="4">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="5" GridPane.columnIndex="9" GridPane.rowIndex="6">
+      <Label text="4" GridPane.columnIndex="10" GridPane.rowIndex="5">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="6" GridPane.columnIndex="9" GridPane.rowIndex="7">
+      <Label text="3" GridPane.columnIndex="10" GridPane.rowIndex="6">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="7" GridPane.columnIndex="9" GridPane.rowIndex="8">
+      <Label text="2" GridPane.columnIndex="10" GridPane.rowIndex="7">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="8" GridPane.columnIndex="9" GridPane.rowIndex="9">
+      <Label text="1" GridPane.columnIndex="10" GridPane.rowIndex="8">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
+      <Button fx:id="ranking_btn" mnemonicParsing="false" onAction="#onRankingDisplay" text="Ranking" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+      <Button fx:id="restart_btn" mnemonicParsing="false" onAction="#restart" text="Restart" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+      <Button fx:id="newGame_btn" mnemonicParsing="false" onAction="#onNewGame" text="New Game" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+      <GridPane fx:id="ups_Start" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="11" GridPane.rowSpan="13">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TitledPane animated="false" text="Enter Player Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="-3.0" layoutY="-7.0" prefHeight="190.0" prefWidth="253.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="72.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="125.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="71.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <TextField fx:id="playerField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="startGame_btn" mnemonicParsing="false" onAction="#onPlayButtonPressed" text="Start" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                              <Label text="Input Player Name" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </children>
+      </GridPane>
+      <Label text="Player:" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+      <Label fx:id="playerLabel" text="name" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <Label text="Time:" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+      <Label fx:id="timer" text="timer" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <Label text="Move:" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+      <Label fx:id="countMove" text="countMove" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+      <Label fx:id="msg" prefHeight="60.0" prefWidth="124.0" text="message" GridPane.columnIndex="10" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+      <GridPane fx:id="ups_Result" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="11" GridPane.rowSpan="11">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TitledPane animated="false" text="Result" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="-3.0" layoutY="-7.0" prefHeight="190.0" prefWidth="253.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="72.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="125.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="71.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#onNewGame" text="OK" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                              <Label fx:id="gotPoint" prefHeight="15.0" prefWidth="225.0" text="Label" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+         </children>
+      </GridPane>
+      <GridPane fx:id="ups_Ranking" visible="false" GridPane.columnSpan="12" GridPane.rowSpan="12">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TitledPane animated="false" prefHeight="545.0" prefWidth="267.0" text="Ranking" GridPane.columnIndex="1" GridPane.rowSpan="2">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="102.0" layoutY="484.0" mnemonicParsing="false" onAction="#onRankingDisplayOff" prefHeight="23.0" prefWidth="63.0" text="OK" />
+                        <TableView fx:id="resultTable" layoutX="8.0" layoutY="14.0" prefHeight="456.0" prefWidth="251.0">
+                          <columns>
+                            <TableColumn fx:id="resultTableCol" prefWidth="62.0" text="Ranking" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </children>
+      </GridPane>
    </children>
 </GridPane>
