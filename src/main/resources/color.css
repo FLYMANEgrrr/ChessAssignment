@@ -1,0 +1,12 @@
+.CBBackground1{
+    -fx-background-color: #ffffff;
+}
+.CBBackground2{
+    -fx-background-color: #a02828;
+}
+.nextCanMove{
+    -fx-background-color: #2ece2e;
+}
+.targetPosition{
+    -fx-background-color: #ff0a0a;
+}
