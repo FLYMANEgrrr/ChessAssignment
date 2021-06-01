@@ -1,12 +1,13 @@
 package status;
 
-import java.util.Comparator;
+
+import javafx.scene.layout.Pane;
 
 /**
  * We used a two dimensional array to represent a position.
  * The object is immutable.
  */
-public class Position{
+public class Position extends Pane implements Comparable<Position> {
     private final int row;
     private final int col;
     /**
@@ -17,26 +18,6 @@ public class Position{
     public Position(int row,int col){
         this.row=row;
         this.col=col;
-    }
-
-    /**
-     * Return Specified object offset
-     * via Position of current moved.
-     * @param offset  current position call offset
-     * @return After calculated new position
-     */
-    public Position afterMoved(Position offset){
-        return afterMoved(offset.row,offset.col);
-    }
-
-    /**
-     * Return the Specified offset via the position of current moved.
-     * @param row Row offset
-     * @param col Col offset
-     * @return Calculated new position
-     */
-    public Position afterMoved(int row,int col){
-        return new Position(this.row+row,this.col+col);
     }
 
     /**
@@ -56,38 +37,57 @@ public class Position{
     }
 
     /**
+     * Return Specified object offset
+     * via Position of current moved.
+     * @param offset Offset of current position
+     * @return After calculated new position
+     */
+    public Position afterMoved(Position offset){
+        return afterMoved(offset.row,offset.col);
+    }
+
+    /**
+     * Return the Specified offset via the position of current moved.
+     * @param row Row offset
+     * @param col Col offset
+     * @return Calculated new position and return the result.
+     */
+    public Position afterMoved(int row,int col){
+        row=this.row+row;
+        col=this.col+col;
+        return new Position(row,col);
+
+    }
+
+    /**
      * @return Define the return String format
      */
     @Override
     public String toString() {
-        return String.format("(%d,%d)", row, col);
+        return String.format("(%d,%d)", this.row, this.col);
     }
 
     /**
-     *
-     * @param o
-     * @return
+     * if two position in  same row and same column, will return true.
+     * @param o object to compare
+     * @return true if both position are same.
      */
     @Override
-    public boolean checkConflict(Object o){
-        if (o != this )
-            return false;
+    public boolean equals(Object o) {
         if (o == this)
             return true;
-        var temp=(Position) o;
-        return this.row== temp.row && this.col==temp.col;
+        if (!(o instanceof Position))
+            return false;
+        var p = (Position) o;
+        return row == p.row && col == p.col;
     }
 
-    /**
-     *
-     * @param o
-     * @return
-     */
     @Override
-    public int compareTo(Position o){
-        if (this.col != o.col)
-            return this.col-o.col;
-        return this.row-o.row;
+    public int compareTo(Position o) {
+        if (row != o.row)
+            return row - o.row;
+
+        return col - o.col;
     }
 
 }

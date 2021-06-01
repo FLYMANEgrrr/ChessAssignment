@@ -3,47 +3,68 @@ package status;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public final class PiecesSate {
 
     private final ObjectProperty<Position> pos = new SimpleObjectProperty<>();
-    private final PiecesType attr;
-
+    private final PiecesAttr attr;
 
     /**
-     *
-     * @param attr
-     * @param row
-     * @param col
+     *create new piece with it attribution and position
+     * @param attr piece attribution
+     * @param row where row index position in the board
+     * @param col where col index position in the board
      */
-    public PiecesSate(PiecesType attr, int row, int col) {
-       this.pos.set(new Position(row,col));
+    public PiecesSate(PiecesAttr attr, int row, int col) {
         this.attr=attr;
+        this.pos.set(new Position(row,col));
     }
 
     /**
-     *
-     * @return
+     *Get Piece Attribute
+     * @return piece attribute
      */
-    public PiecesType getAttr(){
-        return attr;
+    public PiecesAttr getAttr(){
+        return this.attr;
     }
 
     /**
-     *
-     * @return
+     *Get piece current position
+     * @return current position
      */
-    public ObjectProperty<Position> getPos(){
-        return pos;
+    public Position getPosition(){
+        return this.pos.get();
     }
-
     /**
-     *
-     * @param pos
+     *setting piece position
+     * @param pos selected confirm position of piece
      */
-    public void settingPosition(Position pos){
+    public void setPosition(Position pos){
         this.pos.set(pos);
     }
+
+    /**
+     *Get position attribute
+     * @return position attribute
+     */
+    public ObjectProperty<Position> positionProperty(){
+        return this.pos;
+    }
+
+    /**
+     * get the piece can move position
+     * @return next can move position
+     */
+    public List<Position> getNextMove(){
+        if (pos.get()!=null){
+            return attr.getMoves().stream().map(pos.get()::afterMoved).collect(Collectors.toList());
+        }
+        return null;
+    }
+
+
 
 }

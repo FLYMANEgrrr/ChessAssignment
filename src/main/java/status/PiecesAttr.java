@@ -7,7 +7,7 @@ import java.util.List;
  * For each type of chess contains a list of possible actions
  * that cannot be changed.
  */
-public enum PiecesType {
+public enum PiecesAttr {
     /**
      * King Piece and can move relative position
      */
@@ -42,7 +42,7 @@ public enum PiecesType {
      */
     private final List<Position> moves;
 
-    PiecesType(Position[] moves){
+    PiecesAttr(Position[] moves){
         this.moves=List.of(moves);
     }
 
@@ -52,6 +52,8 @@ public enum PiecesType {
      * @return next positions of piece.
      */
     public List<Position> getMoves(){
-        return moves;
+        return this.moves;
     }
+
+
 }
