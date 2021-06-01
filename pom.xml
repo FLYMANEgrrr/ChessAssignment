@@ -18,6 +18,9 @@
         <exec.mainClass>sample.Main</exec.mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <scm>
+        <developerConnection>scm:git:https://github.com/FLYMANEgrrr/HomeworkAssignment.git</developerConnection>
+    </scm>
 
     <dependencies>
         <dependency>
