@@ -68,7 +68,7 @@ public class Controller {
     private Pane[][] chessBoard;
     private final Board board = new Board();
     private final File resultFile = new File(getClass().getProtectionDomain().
-            getCodeSource().getLocation().getPath()+"-result.jason");
+            getCodeSource().getLocation().getPath()+"-result.json");
 
     /**
      *When starting the program, prepare the required controls
