@@ -6,3 +6,7 @@ When a new game is started the program must ask for the name of the player.
 The program must store the result of the games as follows. For each game, the following information must be stored: the date and time when the game was started/finished, the name of the player, the number of moves made by the player during the game, and the outcome (the puzzle is solved/given up). The program must show a high score table in which the top 10 results are displayed. You can score the players based on the steps/time required to solve the puzzle.
 
 The program must store data in a database, in a JSON file, or in an XML document. Optionally, you can implement load/save game functionality.
+
+=====
+when using 'mvn exec:java' to running this program, the result json will save under this path "~/target/classes/-result.json".
+if you are use 'mvn package' , 'java -jar target\ChessAssignment-1.0-SNAPSHOT.jar' , shall save under this path "~/target/ChessAssignment-1.0-SNAPSHOT.jar-result.json"

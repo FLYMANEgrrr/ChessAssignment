@@ -206,6 +206,7 @@ public class Board {
         if (!checkMoveAble(p)){
             nextPosition.set(List.of());
             message.set(choicePiece.get().getAttr()+" is can not move");
+            return;
         }
         var moves = getNextMove(p, pieceList);
         nextPosition.set(moves);
