@@ -9,4 +9,5 @@ The program must store data in a database, in a JSON file, or in an XML document
 
 =====
 when using 'mvn exec:java' to running this program, the result json will save under this path "~/target/classes/-result.json".
-if you are use 'mvn package' , 'java -jar target\ChessAssignment-1.0-SNAPSHOT.jar' , shall save under this path "~/target/ChessAssignment-1.0-SNAPSHOT.jar-result.json"
+
+if you are use 'mvn package' , "java -jar target\ChessAssignment-1.0-SNAPSHOT.jar" , shall save under this path "~/target/ChessAssignment-1.0-SNAPSHOT.jar-result.json"
