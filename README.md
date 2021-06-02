@@ -8,6 +8,7 @@ The program must store the result of the games as follows. For each game, the fo
 The program must store data in a database, in a JSON file, or in an XML document. Optionally, you can implement load/save game functionality.
 
 =====
+
 when using 'mvn exec:java' to running this program, the result json will save under this path "~/target/classes/-result.json".
 
 if you are use 'mvn package' , "java -jar target\ChessAssignment-1.0-SNAPSHOT.jar" , shall save under this path "~/target/ChessAssignment-1.0-SNAPSHOT.jar-result.json"
