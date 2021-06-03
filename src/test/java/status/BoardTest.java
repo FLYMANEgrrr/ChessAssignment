@@ -14,7 +14,7 @@ public class BoardTest {
         try {
             board.start();
         }catch (NullPointerException e){
-            return;
+            board.start();
         }
         var list = board.getPieceList();
         var expectedList = (List<PiecesSate>)board.getClass().getDeclaredField("defaultPosition").get(board);
@@ -31,7 +31,7 @@ public class BoardTest {
         try {
             board.start();
         }catch (NullPointerException e){
-            return;
+            board.start();
         }
         PiecesSate piece = null;
         var list = board.getPieceList();
