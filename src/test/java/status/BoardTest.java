@@ -11,11 +11,7 @@ public class BoardTest {
 
     @Test
     public void testStart() throws NoSuchFieldException, IllegalAccessException{
-        try {
-            board.start();
-        }catch (NullPointerException e){
-            board.start();
-        }
+        board.start();
         var list = board.getPieceList();
         var expectedList = (List<PiecesSate>)board.getClass().getDeclaredField("defaultPosition").get(board);
         assertEquals(expectedList.size(), list.size());
@@ -28,11 +24,7 @@ public class BoardTest {
 
     @Test
     public void testChoice()throws NullPointerException{
-        try {
-            board.start();
-        }catch (NullPointerException e){
-            board.start();
-        }
+        board.start();
         PiecesSate piece = null;
         var list = board.getPieceList();
         for (var temp:list){
